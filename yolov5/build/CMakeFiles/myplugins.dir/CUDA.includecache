@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/config.h
+
+../src/cuda_utils.h
+cuda_runtime_api.h
+-
+
+../src/macros.h
+NvInfer.h
+-
+
+../src/types.h
+config.h
+../src/config.h
+
+/home/jetson/JetsonYolov5/yolov5/plugin/yololayer.cu
+yololayer.h
+/home/jetson/JetsonYolov5/yolov5/plugin/yololayer.h
+cuda_utils.h
+/home/jetson/JetsonYolov5/yolov5/plugin/cuda_utils.h
+cassert
+-
+vector
+-
+iostream
+-
+
+/home/jetson/JetsonYolov5/yolov5/plugin/yololayer.h
+types.h
+/home/jetson/JetsonYolov5/yolov5/plugin/types.h
+macros.h
+/home/jetson/JetsonYolov5/yolov5/plugin/macros.h
+vector
+-
+string
+-
+

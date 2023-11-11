@@ -1,0 +1,6 @@
+/home/jetson/JetsonYolov5/yolov5/build/CMakeFiles/rebuild_cache.dir
+/home/jetson/JetsonYolov5/yolov5/build/CMakeFiles/yolov5_seg.dir
+/home/jetson/JetsonYolov5/yolov5/build/CMakeFiles/edit_cache.dir
+/home/jetson/JetsonYolov5/yolov5/build/CMakeFiles/yolov5_cls.dir
+/home/jetson/JetsonYolov5/yolov5/build/CMakeFiles/yolov5_det.dir
+/home/jetson/JetsonYolov5/yolov5/build/CMakeFiles/myplugins.dir
