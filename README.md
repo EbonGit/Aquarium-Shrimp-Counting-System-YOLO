@@ -17,6 +17,8 @@ This project utilizes computer vision and artificial intelligence to automate th
 - [Train](#train)
 - [License](#license)
 
+![Image](fig/__results___13_0.jpg)
+
 ## Installation
 
 ```bash
