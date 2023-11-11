@@ -7,17 +7,21 @@ from yoloDet import YoloTRT
 
 serial_port = "/dev/ttyUSB0"
 
+engine_path = "yolov5/build/model.engine"
+
+WIDTH = 600
+
 ser = serial.Serial(serial_port, 9600)
 
 # use path for library and engine file
-model = YoloTRT(library="yolov5/build/libmyplugins.so", engine="yolov5/build/best.engine", conf=0.5, yolo_ver="v5")
+model = YoloTRT(library="yolov5/build/libmyplugins.so", engine=engine_path, conf=0.5, yolo_ver="v5")
 
 #cap = cv2.VideoCapture("videos/testvideo.mp4")
 cap = cv2.VideoCapture(0)
 
 while True:
     ret, frame = cap.read()
-    frame = imutils.resize(frame, width=600)
+    frame = imutils.resize(frame, width=WIDTH)
     detections, t = model.Inference(frame)
     #for obj in detections:
     #   print(obj['class'], obj['conf'], obj['box'])
