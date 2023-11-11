@@ -126,7 +126,7 @@ To train your own model, you can follow the example from the YOLOv5 or YOLOv8 no
 
 ![Image](fig/newplot.png)
 
-```
+```bash
 
 # Generate .wts file from .pt
 python gen_wts.py -w model.pt -o model.wts
