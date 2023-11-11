@@ -46,9 +46,10 @@ sudo apt install python3-seaborn
 # Run the shrimp counting system
 python app.py
 
-# Run the arduino script on arduino UNO
+# Run the arduino ino script on arduino UNO
 ```
-
+[app.py](app.py)
+[shrimp.ino](arduino/shrimp.ino)
 ## Hardware Requirements
 
 - NVIDIA Jetson Nano 4GB
@@ -57,8 +58,8 @@ python app.py
 
 ## Software Requirements
 
-- Ubuntu 20.04.6 [Link](https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image)
-- Tensorrt [Link](https://github.com/wang-xinyu/tensorrtx)
+- Ubuntu 20.04.6 [(Link)](https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image)
+- Tensorrt [(Link)](https://github.com/wang-xinyu/tensorrtx)
 - Python 3.8
 - OpenCV
 - YOLOv5
@@ -121,7 +122,7 @@ To use this system for automation with an Arduino UNO, simply take the input val
 
 ## Train
 
-To train your own model, you can follow the example from the YOLOv5 or YOLOv8 notebook and then use TensorRT to convert the .pt model to .engine, making it ready for use. [Link](https://github.com/wang-xinyu/tensorrtx)
+To train your own model, you can follow the example from the YOLOv5 or YOLOv8 notebook and then use TensorRT to convert the .pt model to .engine, making it ready for use. [(Link)](https://github.com/wang-xinyu/tensorrtx)
 
 
 
