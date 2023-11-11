@@ -26,7 +26,7 @@ This project utilizes computer vision and artificial intelligence to automate th
 git clone https://github.com/EbonGit/Aquarium-Shrimp-Counting-System-YOLO.git
 
 # Navigate to the project directory
-cd https://github.com/EbonGit/Aquarium-Shrimp-Counting-System-YOLO.git
+cd Aquarium-Shrimp-Counting-System-YOLO.git
 
 # Install dependencies
 pip install -r requirements.txt
