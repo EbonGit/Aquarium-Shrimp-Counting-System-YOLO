@@ -124,7 +124,7 @@ To use this system for automation with an Arduino UNO, simply take the input val
 
 To train your own model, you can follow the example from the YOLOv5 or YOLOv8 notebook and then use TensorRT to convert the .pt model to .engine, making it ready for use. [(Link)](https://github.com/wang-xinyu/tensorrtx)
 
-
+![Image](fig/newplot.png)
 
 ## License
 
