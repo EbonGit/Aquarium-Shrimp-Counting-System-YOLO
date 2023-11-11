@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project utilizes computer vision and artificial intelligence to automate the counting of shrimp in an aquarium using a Jetson Nano. The system captures images from a camera placed in the aquarium, processes them using deep learning models, and provides the count for automation purposes.
+This project utilizes computer vision and artificial intelligence to automate the counting of shrimp in an aquarium using a Jetson Nano. The system captures images from a camera placed infront of the aquarium, processes them using deep learning models, and provides the count for automation purposes.
 
 ## Table of Contents
 
@@ -14,13 +14,10 @@ This project utilizes computer vision and artificial intelligence to automate th
 - [Configuration](#configuration)
 - [Integration with Aquarium Automation](#integration-with-aquarium-automation)
 - [Demo](#demo)
-- [Challenges and Solutions](#challenges-and-solutions)
-- [Contributing](#contributing)
+- [Train](#train)
 - [License](#license)
 
 ## Installation
-
-Provide step-by-step instructions on how to install and set up the project. Include any dependencies, libraries, or software needed for the system.
 
 ```bash
 # Clone the repository
@@ -31,48 +28,49 @@ cd aquarium-shrimp-counting
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Install Pycuda
+export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
+python3 -m pip install pycuda --user
+
+# Install Seaborn
+sudo apt install python3-seaborn
 ```
 
 ## Usage
 
-Explain how to use the system. Include examples of command-line usage or any GUI if applicable.
-
 ```bash
 # Run the shrimp counting system
-python shrimp_counter.py
+python app.py
 ```
 
 ## Hardware Requirements
 
-List the hardware components required for the project, such as the Jetson Nano, camera, etc.
-
-- NVIDIA Jetson Nano
-- Aquarium camera
-- ...
+- NVIDIA Jetson Nano 4GB
+- Logitech C270
 
 ## Software Requirements
 
-Specify the software requirements, including the operating system, Python version, and any other dependencies.
-
-- Ubuntu 18.04
-- Python 3.6+
+- Ubuntu 20.04.6 [Link](https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image)
+- Tensorrt [Link](https://github.com/wang-xinyu/tensorrtx)
+- Python 3.8
 - OpenCV
-- ...
+- YOLOv5
 
 ## Code Structure
 
 Explain the organization of your codebase. Highlight key directories and files.
 
 ```
-/aquarium-shrimp-counting
-    ├── src
-    │   ├── shrimp_counter.py
-    │   ├── model
-    │   │   ├── trained_model.pth
+/BreadcrumbsAquarium-Shrimp-Counting-System-YOLO
+    ├── model.pt
+    ├── yolov5
+    │   ├── images
+    │   ├── build
+    │   │   ├── model.engine
     │   │   └── ...
-    ├── data
-    │   ├── test_images
-    │   └── ...
+    ├── app.py
     ├── README.md
     ├── requirements.txt
     └── ...
@@ -80,22 +78,18 @@ Explain the organization of your codebase. Highlight key directories and files.
 
 ## Configuration
 
-If your project involves any configuration files, provide information on how to configure the system.
-
 ```yaml
-# config.yml
+serial:
+  port: /dev/ttyUSB0
 
-camera:
-  resolution: 1920x1080
-  ...
+engine:
+  path: yolov5/build/model.engine
+
+WIDTH:
+  resolution: 600x600
 
 model:
-  type: YOLOv3
-  ...
-
-automation:
-  enable: true
-  ...
+  type: YOLOv5
 ```
 
 ## Integration with Aquarium Automation
@@ -106,26 +100,17 @@ Explain how the shrimp counting results are integrated into the aquarium automat
 
 ## Demo
 
-Include a link to a video or GIF demonstrating the system in action.
-
 [Watch Demo](link-to-demo-video)
 
-## Challenges and Solutions
+## Train
 
-Detail any challenges faced during development and how they were resolved.
-
-...
-
-## Contributing
-
-Provide guidelines for contributing to the project.
+To train your own model, you can follow the example from the YOLOv5 or YOLOv8 notebook and then use TensorRT to convert the .pt model to .engine, making it ready for use. [Link](https://github.com/wang-xinyu/tensorrtx)
 
 ...
+
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Feel free to customize and expand on each section based on the specifics of your project. Providing clear and comprehensive documentation helps others understand and contribute to your project.
