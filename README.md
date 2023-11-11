@@ -49,6 +49,9 @@ python app.py
 # Run the arduino ino script on arduino UNO
 ```
 [app.py](app.py)
+
+![Image](fig/arduino.PNG)
+
 [shrimp.ino](arduino/shrimp.ino)
 ## Hardware Requirements
 
