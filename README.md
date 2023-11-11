@@ -45,11 +45,14 @@ sudo apt install python3-seaborn
 ```bash
 # Run the shrimp counting system
 python app.py
+
+# Run the arduino script on arduino UNO
 ```
 
 ## Hardware Requirements
 
 - NVIDIA Jetson Nano 4GB
+- Arduino UNO R1
 - Logitech C270
 
 ## Software Requirements
@@ -67,6 +70,8 @@ Explain the organization of your codebase. Highlight key directories and files.
 ```
 /BreadcrumbsAquarium-Shrimp-Counting-System-YOLO
     ├── model.pt
+    ├── arduino
+    │   ├── shrimp.ino
     ├── yolov5
     │   ├── images
     │   ├── build
@@ -96,9 +101,19 @@ model:
 
 ## Integration with Aquarium Automation
 
-Explain how the shrimp counting results are integrated into the aquarium automation system.
-
-...
+### Arduino serial loop : 
+```ino
+void loop() {
+  if(Serial.available()){
+    receceivedBytes = Serial.read();
+    receceivedChar = receceivedBytes - '0';
+  } 
+  for (int i = 0; i < numSegments; i++) {
+    digitalWrite(segmentPins[i], bitRead(seg[receceivedChar][0], i));
+  }
+}
+```
+To use this system for automation with an Arduino UNO, simply take the input value from the serial communication and use it, for example, to feed the shrimp accordingly and monitor the population's evolution over time.
 
 ## Demo
 
@@ -108,7 +123,6 @@ Explain how the shrimp counting results are integrated into the aquarium automat
 
 To train your own model, you can follow the example from the YOLOv5 or YOLOv8 notebook and then use TensorRT to convert the .pt model to .engine, making it ready for use. [Link](https://github.com/wang-xinyu/tensorrtx)
 
-...
 
 
 ## License
