@@ -23,10 +23,10 @@ This project utilizes computer vision and artificial intelligence to automate th
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/aquarium-shrimp-counting.git
+git clone [https://github.com/your-username/aquarium-shrimp-counting.git](https://github.com/EbonGit/Aquarium-Shrimp-Counting-System-YOLO.git)
 
 # Navigate to the project directory
-cd aquarium-shrimp-counting
+cd https://github.com/EbonGit/Aquarium-Shrimp-Counting-System-YOLO.git
 
 # Install dependencies
 pip install -r requirements.txt
