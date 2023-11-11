@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project utilizes computer vision and artificial intelligence to automate the counting of shrimp in an aquarium using a Jetson Nano. The system captures images from a camera placed in the aquarium, processes them using deep learning models, and provides the count for automation purposes.
+This project utilizes computer vision and artificial intelligence to automate the counting of shrimp in an aquarium using a Jetson Nano. The system captures images from a camera placed infront of the aquarium, processes them using deep learning models, and provides the count for automation purposes.
 
 ## Table of Contents
 
@@ -20,8 +20,6 @@ This project utilizes computer vision and artificial intelligence to automate th
 
 ## Installation
 
-Provide step-by-step instructions on how to install and set up the project. Include any dependencies, libraries, or software needed for the system.
-
 ```bash
 # Clone the repository
 git clone https://github.com/your-username/aquarium-shrimp-counting.git
@@ -31,6 +29,14 @@ cd aquarium-shrimp-counting
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Install Pycuda
+export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
+python3 -m pip install pycuda --user
+
+# Install Seaborn
+sudo apt install python3-seaborn
 ```
 
 ## Usage
