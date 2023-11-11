@@ -52,6 +52,13 @@ python app.py
 
 ![Image](fig/arduino.PNG)
 
+```ino
+
+const int segmentPins[] = {2, 3, 4, 5, 6, 7, 8};  // Digital pins for segments
+                         //b  a  f  c  g  d  e
+
+```
+
 [shrimp.ino](arduino/shrimp.ino)
 ## Hardware Requirements
 
