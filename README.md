@@ -128,7 +128,7 @@ To use this system for automation with an Arduino UNO, simply take the input val
 
 ## Demo
 
-[Watch Demo](link-to-demo-video)
+[Watch Demo](https://youtu.be/tNQY5bQbMKk)
 
 ## Train
 
